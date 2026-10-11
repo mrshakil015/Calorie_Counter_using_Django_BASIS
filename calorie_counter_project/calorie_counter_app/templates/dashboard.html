@@ -1,0 +1,39 @@
+{% extends 'master/base.html' %}
+
+{% block page_title %}
+  {{ title }}
+{% endblock %}
+
+{% block content %}
+  <h1>Welcome, {{ request.user.username }}</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">Required Calorie</div>
+        <div class="card-body">
+          <h5 class="card-title">{{bmr}}kcal</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">Consumed Calorie</div>
+        <div class="card-body">
+          <h5 class="card-title">{{total_consumed_calorie}}kcal</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">Less/More Calorie</div>
+        <div class="card-body">
+          <h5 class="card-title">{{less_or_more}}kcal</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <p>Suggestion: {{suggestion}}</p>
+{% endblock %}

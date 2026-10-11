@@ -1,0 +1,16 @@
+{% extends 'master/base.html' %}
+
+{% block page_title %}
+    {{title}}
+{% endblock page_title %}
+
+{% block content %}
+<h1>Profile Information</h1>
+<p>Username: {{request.user.username}}</p>
+<p>Name: {{request.user.user_profile.name}}</p>
+<p>BMR: {{request.user.user_profile.bmr}} kcal</p>
+
+<a href="{% url 'profile_update_view' %}" class="btn btn-success">Update Profile</a>
+    
+{% endblock content %}
+    
